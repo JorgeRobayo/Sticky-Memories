@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import { signUp } from "../../utilities/users-service";
+import { signUp } from '../../utilities/users-service';
 
-export default class signUpForm extends Component {
+
+export default class SignUpForm extends Component {
   state = {
     name: "",
     email: "",
+    password: "",
     confirm: "",
     error: "",
   };
@@ -12,22 +14,22 @@ export default class signUpForm extends Component {
   handleChange = (evt) => {
     this.setState({
       [evt.target.name]: evt.target.value,
-      error: "",
+      error: ''
     });
   };
-
   handleSubmit = async (evt) => {
     evt.preventDefault();
     try {
-      const formData = { ...this.state };
-      delete formData.error;
-      delete formData.confirm;
-      const user = await signUp(formData);
-      console.log(user);
-    } catch {
-      this.setState({
-        error: "Sign Up Failed - Try Again",
-      });
+        const formData = {...this.state};
+        delete formData.error;
+        delete formData.confirm;
+        const user = await signUp(formData);
+        console.log(user)
+
+    } catch (error) {
+        this.setState({
+            error: "Sign Up Failed - Try Again"
+        })
     }
   };
 
@@ -35,11 +37,10 @@ export default class signUpForm extends Component {
     const disable = this.state.password !== this.state.confirm;
 
     return (
-      <div>
-        <h1>Sign Up form</h1>
-
+      <>
+        <div>SignUpForm</div>
         <div className="form-container">
-          <form autoComplete="off" onSubmit={this.handleSubmit}>
+          <form autoComplete="off" onSubmit={this.handleSubmit} style={{margin:"1em"}}>
             <label>Name</label>
             <input
               type="text"
@@ -78,7 +79,8 @@ export default class signUpForm extends Component {
           </form>
         </div>
         <p className="error-message">{this.state.error}</p>
-      </div>
+        
+      </>
     );
   }
 }
