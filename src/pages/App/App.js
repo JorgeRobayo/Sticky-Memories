@@ -7,25 +7,41 @@ import AuthPage from "../AuthPage/AuthPage.jsx";
 import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage.jsx";
 import Navbar from "../../components/NavBar/NavBar.jsx";
 import Home from "../Home/Home.jsx";
-
+import UploadImg from "../UploadImg/UploadImg.jsx";
 
 function App() {
   const [user, setUser] = useState(getUser());
   return (
     <div className="App">
-
-      {user ? (
+      {!user ? (
+        <div>
+          <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/auth"
+            element={<AuthPage user={user} setUser={setUser} />}
+          />
+        </Routes>
+        </div>
+        
+      ) : (
         <>
           <Navbar user={user} setUser={setUser} />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/orders/new" element={<NewOrderPage user={user} setUser={setUser} />} />
-            <Route path="/orders" element={<OrderHistoryPage user={user} setUser={setUser}/>} />
-
+            <Route
+              path="/orders/new"
+              element={<NewOrderPage user={user} setUser={setUser} />}
+            />
+            <Route
+              path="/orders"
+              element={<OrderHistoryPage user={user} setUser={setUser} />}
+            />
+            <Route 
+            path='/uploadImg' 
+            element={<UploadImg user={user} setUser={setUser}/>}/>
           </Routes>
         </>
-      ) : (
-        <AuthPage user={user} setUser={setUser}/>
       )}
     </div>
   );

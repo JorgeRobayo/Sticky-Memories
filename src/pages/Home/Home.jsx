@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import  {Link} from 'react-router-dom'
+import './Home.css'
+import { getUser } from "../../utilities/users-service.js";
 
 function Home() {
+  const [user, setUser] = useState(getUser());
+
   return (
     <div>
       <h1>Sticky Memories</h1>
@@ -61,8 +65,10 @@ function Home() {
         commodi sunt qui unde quos tenetur delectus fuga, voluptatum quaerat
         sapiente! Laboriosam, vero.
       </p>
-      <Link to ></Link>
-    <button>Make a memory</button>
+
+      {user ? (<Link to='/orders/new' ><button>Make a memory</button></Link>):(<Link to='/auth' ><button>Make a memory</button></Link>)}
+      
+    
     </div>
   );
 }
