@@ -66,7 +66,7 @@ function Home() {
         sapiente! Laboriosam, vero.
       </p>
 
-      {user ? (<Link to='/orders/new' ><button>Make a memory</button></Link>):(<Link to='/auth' ><button>Make a memory</button></Link>)}
+      {user ? (<Link to='/uploadImg' ><button>Make a memory</button></Link>):(<Link to='/auth' ><button>Make a memory</button></Link>)}
       
     
     </div>
