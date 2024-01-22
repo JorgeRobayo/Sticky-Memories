@@ -16,7 +16,7 @@ function TechNews() {
   //LANGUAGE EN = ENGLISH
   let language = "en";
   //DYNAMIC URL
-  let url = `https://newsapi.org/v2/top-headlines?category=${category}&pageSize=${pageSize}&from=${date}-12-21&language=${language}&apiKey=c0ec8f1af7994f868737f416eb39984e`;
+  let url = `https://newsapi.org/v2/top-headlines?sortBy=relevancy&category=${category}&pageSize=${pageSize}&from=${date}-12-21&language=${language}&apiKey=c0ec8f1af7994f868737f416eb39984e`;
 
   useEffect(() => {
     const fetchData = async () => {

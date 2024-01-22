@@ -9,11 +9,16 @@ function Home() {
 
   return (
     <div>
-      <h1>Sticky Memories</h1>
-      <img
-        src="https://cdn11.bigcommerce.com/s-swcou/product_images/uploaded_images/mystickerfacesheets.gif"
-        alt=""
-      />
+      <div className="home-banner-div">
+        <div>
+          <h1>Best Custom Printing Quality</h1>
+          <button>About</button>
+          <button>Make Memory</button>
+        </div>
+        <div>
+          <h1>Sticky Memories</h1>
+        </div>
+      </div>
     
     <TechNews/>
       <h2>who are we?</h2>

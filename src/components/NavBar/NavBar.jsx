@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import * as userService from '../../utilities/users-service'
-function Navbar({user ,setUser}) {
+import * as userService from "../../utilities/users-service";
+import "./NavBar.css";
+import userAvatar from "./loginlogo.png";
 
+function Navbar({ user, setUser }) {
   function handleLogOut() {
     // Delegate to the users-service
     userService.logOut();
@@ -11,17 +13,28 @@ function Navbar({user ,setUser}) {
   }
   return (
     <>
-      <nav style={{ justifyContent: "space-evenly", display: "flex" }}>
+      <nav className="nav">
+        <div className="nav-div">
+          <img className="user-avatar" src={userAvatar} alt="" />
+          <div>
+            <p>Signed as: {user.name} </p>
+            <Link to="" onClick={handleLogOut}>
+              <button>Log-Out</button>
+            </Link>
+          </div>
+        </div>
 
-      <div style={{justifyContent:'space-around'}}>
-        <p style={{margin:'1em'}}>Welcome {user.name}, </p>
-        <p style={{margin:'1em'}}> Logged In : {user.email}</p>
-        <Link to="" onClick={handleLogOut}><button>Log-Out</button></Link>
-      </div>
-
-        <Link to="/"><h2>Home</h2></Link>
-        <Link to="/uploadImg"><h2>Make a Memory</h2></Link>
-        <Link to="/orders"><h2>Cart</h2></Link>
+        <div className="nav-page-links">
+          <Link to="/">
+            <p className="nav-p">Home</p>
+          </Link>
+          <Link to="/uploadImg">
+            <p className="nav-p">Make a Memory</p>
+          </Link>
+          <Link to="/orders">
+            <p className="nav-p">Cart</p>
+          </Link>
+        </div>
       </nav>
     </>
   );

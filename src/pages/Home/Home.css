@@ -1,0 +1,9 @@
+.home-banner-div{
+    display: flex;
+    margin-top: 20px;
+    height: 500px;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #F79D65;
+    /* background-image: url('https://cdn11.bigcommerce.com/s-swcou/product_images/uploaded_images/mystickerfacesheets.gif'); */
+}
