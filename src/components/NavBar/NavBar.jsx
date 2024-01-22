@@ -20,7 +20,7 @@ function Navbar({user ,setUser}) {
       </div>
 
         <Link to="/"><h2>Home</h2></Link>
-        <Link to="/orders/new"><h2>New Order</h2></Link>
+        <Link to="/uploadImg"><h2>Make a Memory</h2></Link>
         <Link to="/orders"><h2>Cart</h2></Link>
       </nav>
     </>

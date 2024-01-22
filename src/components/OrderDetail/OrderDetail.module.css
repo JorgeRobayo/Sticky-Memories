@@ -45,3 +45,16 @@
     top: 50vh;
     font-size: 2vmin;
   }
+
+  .selectedImgContainer {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .selectedImg {
+    max-width: 100%;
+    max-height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+  }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import  {Link} from 'react-router-dom'
 import './Home.css'
 import { getUser } from "../../utilities/users-service.js";
+import TechNews from "../../components/TechNews/TechNews.jsx";
 
 function Home() {
   const [user, setUser] = useState(getUser());
@@ -13,6 +14,10 @@ function Home() {
         src="https://cdn11.bigcommerce.com/s-swcou/product_images/uploaded_images/mystickerfacesheets.gif"
         alt=""
       />
+
+    <h2>Lastest Tech News</h2>
+    <img src={"https://techblogwriter.co.uk/wp-content/uploads/2016/11/Tech-News.png"} alt="tech news" />
+    <TechNews/>
       <h2>who are we?</h2>
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel sed

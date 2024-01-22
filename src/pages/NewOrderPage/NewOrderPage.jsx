@@ -15,6 +15,7 @@ function NewOrderPage({ user, setUser }) {
   const [menuItems, setMenuItems] = useState([]);
   const [activeCat, setActiveCat] = useState("");
   const [cart, setCart] = useState(null);
+  const [selectedImg, setSelectedImg] = useState(null)
   const categoriesRef = useRef([]);
   const navigate = useNavigate();
 
@@ -80,6 +81,7 @@ function NewOrderPage({ user, setUser }) {
           order={cart}
           handleChangeQty={handleChangeQty}
           handleCheckout={handleCheckout}
+          selectedImg={selectedImg}
         />
       </main>
   );
