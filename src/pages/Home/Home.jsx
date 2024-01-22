@@ -3,20 +3,29 @@ import  {Link} from 'react-router-dom'
 import './Home.css'
 import { getUser } from "../../utilities/users-service.js";
 import TechNews from "../../components/TechNews/TechNews.jsx";
-
+import BannerImg from "./banner-img.png"
+import StickyImg from './sticky-memories.png'
 function Home() {
   const [user, setUser] = useState(getUser());
 
   return (
     <div>
       <div className="home-banner-div">
-        <div>
+        <div className="right-side-banner">
           <h1>Best Custom Printing Quality</h1>
           <button>About</button>
-          <button>Make Memory</button>
+          {!user ? (<Link to='/auth'><button>Make Memory</button></Link>) : (<Link to='/uploadImg'><button>Make Memory</button></Link>)}
+          
+          
         </div>
-        <div>
-          <h1>Sticky Memories</h1>
+        <div className="left-side-banner"> 
+          {/* <h1>Sticky Memories</h1> */}
+          <img 
+          className="sticky-letters"
+          src={StickyImg} alt="" />
+          <img
+          className="baner-img"
+          src={BannerImg} alt="" />
         </div>
       </div>
     

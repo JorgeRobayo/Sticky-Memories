@@ -12,7 +12,7 @@ function TechNews() {
   //FROM DATE ((FOR FREE TRIAL ONLY ABLE TO FETCH FROM THE PAST 5 MONTHS))
   let date = "2023-12-21";
   //HOW MANY RESULTS
-  let pageSize = "10";
+  let pageSize = "12";
   //LANGUAGE EN = ENGLISH
   let language = "en";
   //DYNAMIC URL
