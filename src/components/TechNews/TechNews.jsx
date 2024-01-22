@@ -1,6 +1,11 @@
 import React from "react";
+import { useEffect, useState } from "react";
+import './TechNews.css'
 
 function TechNews() {
+  const [articles, setArticles] = useState([]);
+  const [error, setError] = useState(null);
+
   const key = "c0ec8f1af7994f868737f416eb39984e";
   //NEWS CATEGORY
   let category = "technology";
@@ -12,21 +17,39 @@ function TechNews() {
   let language = "en";
   //DYNAMIC URL
   let url = `https://newsapi.org/v2/top-headlines?category=${category}&pageSize=${pageSize}&from=${date}-12-21&language=${language}&apiKey=c0ec8f1af7994f868737f416eb39984e`;
-  
-  const req = new Request(url);
-  fetch(req).ten((response) => {
-    console.log(response.json);
-  });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const data = await response.json();
+        setArticles(data.articles);
+      } catch (error) {
+        setError("Error fetching tech news");
+      }
+    };
+    fetchData();
+    
+  }, [url]);
 
   return (
     <div>
       <h1>Tech News</h1>
-      <ul>
-        <ls>ARTICLES HERE</ls>
-        <ls>ARTICLES HERE</ls>
-        <ls>ARTICLES HERE</ls>
-        <ls>ARTICLES HERE</ls>
-        <ls>ARTICLES HERE</ls>
+      {error && <p>{error}</p>}
+      <ul className='news-ul'>
+        {articles.map((article, index) => (
+          <container className="container" key={index}>
+            <h3>{article.title}</h3>
+            <a href={article.url}>
+              <img className="article-img" src={article.urlToImage} alt="" />{" "}
+            </a>
+            <p>{article.description}</p>
+            <h4>Author: {article.author}</h4>
+          </container>
+        ))}
       </ul>
     </div>
   );
