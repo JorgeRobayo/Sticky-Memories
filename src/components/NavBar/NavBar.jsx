@@ -24,8 +24,10 @@ function Navbar({ user, setUser }) {
             </Link>
           </div>
         </div>
-        <Logo />
-
+        <div>
+          <Logo />
+        </div>
+        
         <div className="nav-page-links">
           <Link to="/">
             <p className="nav-p">Home</p>
