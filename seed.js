@@ -22,7 +22,7 @@ const Item = require("./models/item");
     // Category 0: Stickers
     {
       name: "Semi-Gloss",
-      imgUrl: "die-cut-hand.png",
+      emoji: "🖼️",
       category: categories[0],
       price: 5.95,
     },
@@ -34,11 +34,11 @@ const Item = require("./models/item");
 
     // Category 1: Magnets
     { name: '2" X 3.5"', emoji: "🧲", category: categories[1], price: 1.95 },
-    { name: '3" X 4"', emoji: "🧁", category: categories[1], price: 0.95 },
-    { name: '4" X 7"', emoji: "🍮", category: categories[1], price: 2.95 },
-    { name: '5" X 7"', emoji: "🍮", category: categories[1], price: 2.95 },
-    { name: '7" X 5"', emoji: "🍮", category: categories[1], price: 2.95 },
-    { name: "Die-Cut", emoji: "🍮", category: categories[1], price: 2.95 },
+    { name: '3" X 4"', emoji: "🧲", category: categories[1], price: 0.95 },
+    { name: '4" X 7"', emoji: "🧲", category: categories[1], price: 2.95 },
+    { name: '5" X 7"', emoji: "🧲", category: categories[1], price: 2.95 },
+    { name: '7" X 5"', emoji: "🧲", category: categories[1], price: 2.95 },
+    { name: "Die-Cut", emoji: "🧲", category: categories[1], price: 2.95 },
 
     // Category 2: Posters
     {

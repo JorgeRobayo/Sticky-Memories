@@ -1,6 +1,7 @@
 // LoginForm.jsx
 
 import { useState } from 'react';
+import './LoginForm.module.css'
 import * as usersService from '../../utilities/users-service';
 
 export default function LoginForm({ setUser }) {
@@ -31,8 +32,14 @@ async function handleSubmit(evt) {
 }
 
 return (
-  <div>
+  <div className='logIn-master-div'>
     <h1>Log In Form</h1>
+    <div>
+      <p>Test Account:</p>
+      <p>Email: test@test</p>
+      <p>Pasword: lol</p>
+    </div>
+    
     <div className="form-container" onSubmit={handleSubmit}>
       <form autoComplete="off" >
         <label>Email</label>

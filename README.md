@@ -54,7 +54,7 @@ An issue with displaying images for the 'Hamburgersa' item may be related to the
 
 ## Future Fixes
 
-- **Dynamic Rendering:** Consider dynamically rendering categories and items on the frontend based on fetched data.
+- **Dynamic Rendering:** Dynamically rendering categories and items on the frontend based on fetched data.
 - **Error Handling:** Implement error handling in backend routes for better management.
 - **Image Paths:** Double-check and ensure correct image paths specified in item data.
 

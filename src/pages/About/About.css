@@ -1,0 +1,66 @@
+
+
+.grid {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+p{
+  font-weight: 500;
+}
+.about-container {
+  background-color: var(--light-blue);
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding: 15px;
+  margin: 20px 0;
+}
+
+.about-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  backdrop-filter: blur(5px);
+}
+
+/* Specific styles for each section */
+.about-text-img {
+  width: 350px;
+  margin: 25px;
+}
+
+.about {
+  text-align: center;
+}
+
+.who-are-we,
+.our-commitment,
+.how-does-work,
+.delivery-time {
+  text-align: center;
+}
+
+.how-does-work ol {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-weight: 500;
+}
+
+.how-works-list {
+  width: 48%;
+  margin-bottom: 10px;
+}
+
+.delivery-time h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}

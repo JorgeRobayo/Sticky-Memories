@@ -1,34 +1,50 @@
-.home-banner-div{
-    display: flex;
-    margin-top: 20px;
-    height: 500px;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #F79D65;
-    border-radius: 5px;
-    /* background-image: url('https://cdn11.bigcommerce.com/s-swcou/product_images/uploaded_images/mystickerfacesheets.gif'); */
-}
-.left-side-banner{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+body {
+  background-size: cover;
 }
 
-.right-side-banner{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.home-banner-div {
+  position: relative;
+  display: flex;
+  margin-top: 20px;
+  height: 500px;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #74b3ff51;
+  border-radius: 5px;
 }
-.sticky-letters{
-    width: 400px;
-   
+.home-banner-div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  backdrop-filter: blur(5px);
+  /* background-color: inherit; */
 }
 
-.best-quality{
-    width: 420px;
-    margin-bottom: 30px;
+.left-side-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.baner-img{
-    width: 400px;
+.right-side-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sticky-letters {
+  width: 400px;
+}
+
+.best-quality {
+  width: 420px;
+  margin-bottom: 30px;
+}
+
+.baner-img {
+  width: 400px;
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import "./TechNews.css";
+import techNewsImg from './tech-news.png'
 
 function TechNews() {
   const [articles, setArticles] = useState([]);
@@ -51,7 +52,9 @@ function TechNews() {
 
   return (
     <div>
-      <h1>Tech News</h1>
+      {/* <h1>Tech News</h1> */}
+      <img
+      className="tech-title-img" src={techNewsImg} alt="" />
       {error && <p>{error}</p>}
       <ul className="news-ul">
         {displayedArticles.map((article, index) => (
@@ -61,7 +64,7 @@ function TechNews() {
               <img className="article-img" src={article.urlToImage} alt="" />
             </a>
             <p>{article.description}</p>
-            <h4>Author: {article.author}</h4>
+            <h4 className="author">Author: {article.author}</h4>
           </div>
         ))}
       </ul>

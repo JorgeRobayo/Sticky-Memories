@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import * as userService from "../../utilities/users-service";
 import "./NavBar.css";
 import userAvatar from "./loginlogo.png";
+import Logo from "../Logo/Logo";
 
 function Navbar({ user, setUser }) {
   function handleLogOut() {
@@ -12,7 +13,7 @@ function Navbar({ user, setUser }) {
     setUser(null);
   }
   return (
-    <>
+    <div>
       <nav className="nav">
         <div className="nav-div">
           <img className="user-avatar" src={userAvatar} alt="" />
@@ -23,6 +24,7 @@ function Navbar({ user, setUser }) {
             </Link>
           </div>
         </div>
+        <Logo />
 
         <div className="nav-page-links">
           <Link to="/">
@@ -36,7 +38,7 @@ function Navbar({ user, setUser }) {
           </Link>
         </div>
       </nav>
-    </>
+    </div>
   );
 }
 

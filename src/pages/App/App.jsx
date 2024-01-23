@@ -8,6 +8,7 @@ import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage.jsx";
 import Navbar from "../../components/NavBar/NavBar.jsx";
 import Home from "../Home/Home.jsx";
 import UploadImg from "../UploadImg/UploadImg.jsx";
+import About from "../About/About.jsx";
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -29,6 +30,7 @@ function App() {
           <Navbar user={user} setUser={setUser} />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
             <Route
               path="/orders/new"
               element={<NewOrderPage user={user} setUser={setUser} />}

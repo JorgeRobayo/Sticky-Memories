@@ -1,4 +1,4 @@
-
+/* 
 .Logo {
     height: 12vmin;
     width: 12vmin;
@@ -11,4 +11,13 @@
     color: var(--tan-1);
     font-size: 2.7vmin;
     border: .6vmin solid var(--tan-2);
+    } */
+
+    .logo{
+        width: 100px;
+    }
+
+    .logo-div{
+        display: flex;
+        align-items: center;
     }

@@ -42,8 +42,9 @@
   --tan-2: #dde3e7;
   --tan-3: #d1dee2;
   --tan-4: #F8EDEB;
-  --blue: #F25C54;
-  --text-light: #968c84;
+  --blue: #316db6d3;
+  --light-blue: #74b3ff51;
+  --text-light: #41434f;
   --text-dark: #615954;
 }
 
@@ -61,6 +62,10 @@ body {
   background-color: var(--tan-4);
   padding: 2vmin;
   height: 100vh;
+  /* background-image: url('https://images.unsplash.com/photo-1512641406448-6574e777bec6?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D0'); */
+  /* background-image: url('https://images.unsplash.com/photo-1542272201-b1ca555f8505?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); */
+  background-image: url('https://images.unsplash.com/photo-1522441815192-d9f04eb0615c?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
 }
 
 code {
@@ -170,7 +175,7 @@ button, a.button {
 }
 
 button.btn-sm {
-  font-size: 1.5vmin;
+  font-size: 2vmin;
   padding: .6vmin .8vmin;
 }
 
