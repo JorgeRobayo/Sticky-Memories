@@ -1,8 +1,11 @@
 import React from "react";
 import LineItem from "../LineItem/LineItem";
 import styles from "./OrderDetail.module.css";
+import { useImg } from "../../context/ImgContext";
 
-function OrderDetail({ order, handleChangeQty, handleCheckout, selectedImg }) {
+function OrderDetail({ order, handleChangeQty, handleCheckout}) {
+  const {selectedImg} = useImg()
+
   if (!order) return null;
 
   const lineItems = order.lineItems.map((item) => (
@@ -19,13 +22,18 @@ function OrderDetail({ order, handleChangeQty, handleCheckout, selectedImg }) {
       <div className={styles.sectionHeading}>
         {order.isPaid ? (
           <span>
-            ORDER <span className="smaller">{order.orderId}</span>
+            ORDER <span className="smaller">{order.orderId} </span>
           </span>
         ) : (
           <span>NEW ORDER</span>
         )}
         <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
       </div>
+      <div className={styles.selectedImgContainer}>
+        <h3>Your Image:</h3>
+          <img src={URL.createObjectURL(selectedImg)} alt="selected" className={styles.selectedImg} />
+        
+        </div>
       <div
         className={`${styles.lineItemContainer} flex-ctr-ctr flex-col scroll-y`}
       >
@@ -51,12 +59,12 @@ function OrderDetail({ order, handleChangeQty, handleCheckout, selectedImg }) {
             </section>
           </>
         ) : (
-          <div className={styles.hungry}>Hungry?</div>
+          <div className={styles.hungry}>Make a choice!</div>
         )}
-        <div className={styles.selectedImgContainer}>
-          <img src={selectedImg} alt="selected" className={styles.selectedImg} />
+        {/* <div className={styles.selectedImgContainer}>
+          <img src={URL.createObjectURL(selectedImg)} alt="selected" className={styles.selectedImg} />
         
-        </div>
+        </div> */}
       </div>
     </div>
   );

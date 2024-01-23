@@ -9,13 +9,14 @@ import MenuList from "../../components/MenuList/MenuList";
 import CategoryList from "../../components/CategoryList/CategoryList";
 import OrderDetail from "../../components/OrderDetail/OrderDetail";
 import UserLogOut from "../../components/UserLogOut/UserLogOut";
+import { useImg } from "../../context/ImgContext";
 
 function NewOrderPage({ user, setUser }) {
   //setting states
   const [menuItems, setMenuItems] = useState([]);
   const [activeCat, setActiveCat] = useState("");
   const [cart, setCart] = useState(null);
-  const [selectedImg, setSelectedImg] = useState(null)
+  const { selectedImg } = useImg();
   const categoriesRef = useRef([]);
   const navigate = useNavigate();
 

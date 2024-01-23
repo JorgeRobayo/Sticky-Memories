@@ -1,14 +1,15 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useImg } from "../../context/ImgContext";
 
 function UploadImg() {
-  const [selectedImg, setSelectedImg] = useState(null);
+  const {selectedImg ,setSelectedImg} = useImg();
 
   const handleImgChange = (e) => {
     const file = e.target.files[0];
     setSelectedImg(file);
-    console.log('image selected')
+    console.log('image selected: ', file)
   };
 
   return (

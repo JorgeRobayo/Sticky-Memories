@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: space-around;
     background-color: #F79D65;
+    border-radius: 5px;
     /* background-image: url('https://cdn11.bigcommerce.com/s-swcou/product_images/uploaded_images/mystickerfacesheets.gif'); */
 }
 .left-side-banner{
@@ -12,10 +13,22 @@
     flex-direction: column;
     align-items: center;
 }
+
+.right-side-banner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .sticky-letters{
     width: 400px;
+   
+}
+
+.best-quality{
+    width: 420px;
+    margin-bottom: 30px;
 }
 
 .baner-img{
-    width: 300px;
+    width: 400px;
 }

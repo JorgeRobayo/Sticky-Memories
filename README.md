@@ -1,3 +1,112 @@
+# Web Application Overview
+
+## Frontend (React)
+
+### Components
+
+Built with React, the application includes a `MenuListItem` component for displaying individual items, featuring an image, name, price, and an "ADD" button.
+
+### Styling
+
+CSS modules (`MenuListItem.module.css`) are used for styling components, defining layout, colors, and appearance.
+
+### Category and Item Data
+
+Categories and items are defined in the backend using Mongoose schemas, with initial data populated in the script.
+
+### Category and Item Rendering
+
+Categories and items are fetched from the database in the backend and dynamically rendered on the frontend.
+
+### Emoji Usage
+
+Emojis serve as a visual representation for items, associated with each item and displayed on the frontend.
+
+## Backend (Node.js, Express, MongoDB)
+
+### Database Connection
+
+The backend connects to a MongoDB database using Mongoose.
+
+### Schemas
+
+Mongoose schemas define the structure of data for Category and Item.
+
+### Data Population
+
+An asynchronous function deletes existing categories and items and populates the database with new ones.
+
+### Express Server
+
+The script sets up an Express server with routes for managing categories and items.
+
+### Category and Item Routes
+
+Routes handle CRUD operations (Create, Read, Update, Delete) for categories and items.
+
+### Initialization
+
+The script initializes the application by deleting existing data and creating new categories and items.
+
+## Image Display Issue
+
+An issue with displaying images for the 'Hamburgersa' item may be related to the `imgUrl` property;
+
+## Future Fixes
+
+- **Dynamic Rendering:** Consider dynamically rendering categories and items on the frontend based on fetched data.
+- **Error Handling:** Implement error handling in backend routes for better management.
+- **Image Paths:** Double-check and ensure correct image paths specified in item data.
+
+## How Information Is Sent Through the Code
+
+### Frontend (React)
+
+#### Rendering Items
+
+The `MenuListItem` component passes down information about a specific menu item using the `menuItem` prop.
+
+#### Displaying Information
+
+`MenuListItem` uses the `menuItem` prop to display information like `name`, `imgUrl`, `price`, etc.
+
+#### Handling Add to Order
+
+The `handleAddToOrder` function is passed down and triggered when the user clicks the "ADD" button.
+
+#### CSS Styling
+
+Information like `name`, `price`, and `imgUrl` dynamically styles the `MenuListItem` component.
+
+### Backend (Node.js, Express, MongoDB)
+
+#### Data Retrieval
+
+In the backend script, data is fetched from the MongoDB database using Mongoose.
+
+#### Data Population
+
+Data is populated into the MongoDB database using Mongoose's `create` method.
+
+#### Express Routes
+
+Routes in Express handle category and item data.
+
+#### CRUD Operations
+
+CRUD operations (Create, Read, Update, Delete) are performed on categories and items.
+
+#### Sending Data to Frontend
+
+Data fetched from the database is sent to the frontend as a response to HTTP requests.
+
+## Image Display Issue
+
+The image path issue for 'Hamburgersa' may involve ensuring that the correct path is specified in the `imgUrl` property for that specific item. If the image is not displaying, it could be due to an incorrect path or file not being present in the specified location.
+
+This explanation is based on the provided code, and it reflects the approach in building and troubleshooting the application. If you have specific questions or areas you'd like more clarification on, feel free to ask!
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
