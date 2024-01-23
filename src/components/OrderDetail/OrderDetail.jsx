@@ -2,6 +2,7 @@ import React from "react";
 import LineItem from "../LineItem/LineItem";
 import styles from "./OrderDetail.module.css";
 import { useImg } from "../../context/ImgContext";
+import { Link } from "react-router-dom";
 
 function OrderDetail({ order, handleChangeQty, handleCheckout}) {
   const {selectedImg} = useImg()
@@ -22,7 +23,7 @@ function OrderDetail({ order, handleChangeQty, handleCheckout}) {
       <div className={styles.sectionHeading}>
         {order.isPaid ? (
           <span>
-            ORDER <span className="smaller">{order.orderId} </span>
+            ORDER <span className="smaller">{order.orderId}</span>
           </span>
         ) : (
           <span>NEW ORDER</span>
@@ -44,13 +45,14 @@ function OrderDetail({ order, handleChangeQty, handleCheckout}) {
               {order.isPaid ? (
                 <span className={styles.right}>TOTAL&nbsp;&nbsp;</span>
               ) : (
-                <button
+                 <button
                   className="btn-sm"
                   onClick={handleCheckout}
                   disabled={!lineItems.length}
                 >
                   CHECKOUT
                 </button>
+               
               )}
               <span>{order.totalQty}</span>
               <span className={styles.right}>

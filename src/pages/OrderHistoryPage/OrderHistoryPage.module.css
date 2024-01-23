@@ -5,12 +5,13 @@
     grid-template-rows: 1fr;
     background-color: var(--light-blue);
     border-radius: 2vmin;
+    margin: 15px;
   }
   
   .OrderHistoryPage .aside {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin: 3vmin 2vmin;
   }

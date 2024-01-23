@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useImg } from "../../context/ImgContext";
+import UploadImgText from "./upload-img.png";
 import "./UploadImg.css";
 
 function UploadImg() {
@@ -16,8 +17,10 @@ function UploadImg() {
   return (
     <div className="UploadImg">
       <div>
+        <img className="upload-img-text" src={UploadImgText} alt="" />
         <div className="form-div"></div>
-        <h1>Upload Image First</h1>
+        {/* <h1>Upload Image First</h1> */}
+
         <input type="file" accept="image/*" onChange={handleImgChange} />
         {selectedImg && (
           <div>
